@@ -1,0 +1,22 @@
+[
+    {
+        "iconUrl": "/fb-icon.svg",
+        "name": "Facebook",
+        "link": "https://www.facebook.com/v5.0/dialog/share?app_id=671373654631248&channel_url=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df0e15e01e7097ea4d%26domain%3Dacharyaprashant.org%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Facharyaprashant.org%252Ff725a4a6f2c18eac0%26relation%3Dopener&display=popup&e2e=%7B%7D&fallback_redirect_uri=https%3A%2F%2Facharyaprashant.org%2Fen%2Fvideo-modules%2Fseries%2Fcourse-series-eeb9d3&hashtag=%23AcharyaPrashant&href=https%3A%2F%2Facharyaprashant.org%2Fhi%2Fvideo-modules%2Fseries%2Fcourse-series-eeb9d3&locale=en_US&next=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Dfc21ecd6c224e03c3%26domain%3Dacharyaprashant.org%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Facharyaprashant.org%252Ff725a4a6f2c18eac0%26relation%3Dopener%26frame%3Df2ef892ee6ed0522f%26result%3D%2522xxRESULTTOKENxx%2522&quote&sdk=joey&version=v5.0&_rdc=1&_rdr"
+    },
+    {
+        "iconUrl": "/twitter-icon.svg",
+        "name": "Twitter",
+        "link": "https://www.facebook.com/v5.0/dialog/share?app_id=671373654631248&channel_url=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df0e15e01e7097ea4d%26domain%3Dacharyaprashant.org%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Facharyaprashant.org%252Ff725a4a6f2c18eac0%26relation%3Dopener&display=popup&e2e=%7B%7D&fallback_redirect_uri=https%3A%2F%2Facharyaprashant.org%2Fen%2Fvideo-modules%2Fseries%2Fcourse-series-eeb9d3&hashtag=%23AcharyaPrashant&href=https%3A%2F%2Facharyaprashant.org%2Fhi%2Fvideo-modules%2Fseries%2Fcourse-series-eeb9d3&locale=en_US&next=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Dfc21ecd6c224e03c3%26domain%3Dacharyaprashant.org%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Facharyaprashant.org%252Ff725a4a6f2c18eac0%26relation%3Dopener%26frame%3Df2ef892ee6ed0522f%26result%3D%2522xxRESULTTOKENxx%2522&quote&sdk=joey&version=v5.0&_rdc=1&_rdr"
+    },
+    {
+        "iconUrl": "/whatsapp-icon.svg",
+        "name": "WhatsApp",
+        "link": "https://wa.me/?text=%0Ahttps%3A%2F%2Facharyaprashant.org%2Fhi%2Fvideo-modules%2Fseries%2Fcourse-series-eeb9d3"
+    },
+    {
+        "iconUrl": "/linkedin-icon.svg",
+        "name": "LinkedIn",
+        "link": "https://www.linkedin.com/shareArticle/?url=https://acharyaprashant.org/hi/video-modules/series/course-series-eeb9d3"
+    }
+]

@@ -1,5 +1,11 @@
 :root{
-  --color-primary: #ea580c;
+  --color-primary: rgb(210 65 21);
+  --color-secondary: #ea580c;
+  --color-accent: rgb(254 215 170);
   --text-1: #1e293b;
-  --text-2: #475569
+  --text-2: #475569;
+  --text-3: rgb(71 85 105);
+  --color-bg-2: rgb(30 41 59);
+  --border-bottom-color: #e5e7eb;
 }
+

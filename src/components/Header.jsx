@@ -1,11 +1,24 @@
-import React from 'react'
+import React, { useState, useContext } from 'react'
 import { FlexBox } from './reusables/AllContainers'
-import { List, ListItem, Typography } from '@mui/material'
+import { Box, Typography } from '@mui/material'
+import { ArrowDropDown, MenuOutlined, PhoneOutlined } from '@mui/icons-material';
+import { useNavigate } from 'react-router-dom';
+import { LanguageContext } from '../context/langContext';
 
 const Header = () => {
 
+    const { language, setLanguage, langStr } = useContext(LanguageContext)
+
+    const switchLanguage = () => {
+        if (language === 'HINDI') {
+            setLanguage('ENGLISH')
+        } else {
+            setLanguage('HINDI')
+        }
+    }
+
     const navMenuList = [
-        { title: 'Home', link: '/' },
+        { title: langStr.nav_menu.menu_1, link: '/' },
         {
             title: 'Live Sessions',
             link: '',
@@ -21,7 +34,7 @@ const Header = () => {
         },
         {
             title: 'Video Series',
-            link: 'https://acharyaprashant.org/en/video-modules', subMenu: [{ title: '' }]
+            link: 'https://acharyaprashant.org/en/video-modules',
         },
         {
             title: 'AP Books',
@@ -51,44 +64,128 @@ const Header = () => {
 
 
     ]
+
+    const navigate = useNavigate()
+
+    const [showSubMenu, setShowSubMenu] = useState(false)
+
     return (
-        <FlexBox sx={{
-            height: '3rem',
-            justifyContent: 'flex-start',
-            backgroundColor: 'var(--color-primary)'
+
+        <Box sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            width: '100vw'
         }}>
+            <FlexBox sx={{
+                height: '3rem',
+                justifyContent: 'space-between',
+                backgroundColor: 'var(--color-primary)',
+                paddingX: '1rem',
+            }}>
 
-            <FlexBox sx={{ width: 'fit-content' }}>
-                <img
-                    style={{
-                        height: '2rem',
-                        width: '2rem',
-                        marginLeft: '1rem',
+                <FlexBox sx={{ width: 'fit-content', gap: '2rem' }}>
+                    <img
+                        style={{
+                            height: '2rem',
+                            width: '2rem',
+                            cursor: 'pointer'
+                        }}
+                        src="https://acharyaprashant.org/images/ic_favicon.png"
+                        alt="Acharya Prashant" />
+                    <FlexBox gap={'2rem'} >
+                        {navMenuList.map((item, idx) => (
+                            <FlexBox
+                                onClick={() => {
+                                    item?.subMenu ? setShowSubMenu(true) : navigate(item.link)
+                                }}
+                                sx={{
+                                    width: 'fit-content',
+                                    color: 'white',
+                                    height: '100%',
+                                    gap: 0,
+                                    cursor: 'pointer'
+                                }} key={idx}>
+
+                                <Typography sx={{ fontSize: '0.875rem' }}>{item.title}</Typography>
+                                {item?.subMenu ? <ArrowDropDown /> : <></>}
+
+                                {item?.subMenu && showSubMenu && <SubMenu />}
+                            </FlexBox>
+                        ))}
+                    </FlexBox>
+                </FlexBox>
+
+                <FlexBox sx={{ width: 'fit-content', color: 'white', gap: '0.75rem' }}>
+
+                    <FlexBox gap={0} sx={{ cursor: 'pointer' }}
+                    onClick={switchLanguage}
+                    >
+
+                        <Box sx={{
+                            color: 'white',
+                            fontWeight: '600',
+                            border: '2px solid white',
+                            borderRadius: '0.25rem',
+                            fontSize: '0.8rem',
+                            paddingX: '0.5rem',
+                            display: 'flex',
+                            alignItems: 'center',
+                        }}>
+                            {language === 'HINDI' ? 'HI' : 'EN'}
+                        </Box>
+                        <ArrowDropDown />
+                    </FlexBox>
+
+
+                    <PhoneOutlined sx={{ cursor: 'pointer' }} />
+
+                    <Box sx={{
+                        display: 'flex',
+                        alignItems: 'center',
                         cursor: 'pointer'
-                    }}
-                    src="https://acharyaprashant.org/images/ic_favicon.png"
-                    alt="Acharya Prashant" />
+                    }}>
+                        <MenuOutlined />
+                        <Typography fontSize={'0.75rem'} ml={'0.125rem'}>Menu</Typography>
+                    </Box>
 
-                <List>
-                    {navMenuList.map((item, idx) => {
-                        <FlexBox sx={{ width: 'fit-content', color: 'white' }} key={idx}>
 
-                            <Typography>{item.title}</Typography>
-                        </FlexBox>
-                    })}
-
-                </List>
-            </FlexBox>
-
-            <FlexBox sx={{ width: 'fit-content' }}>
+                </FlexBox>
 
             </FlexBox>
 
+            <FlexBox sx={{
+                backgroundColor: 'var(--color-bg-2)',
+                color: 'white',
+                paddingY: '1rem'
+            }}>
+                <Box sx={{
+                    backgroundColor: 'rgb(220 38 38)',
+                    padding: '0.45rem',
+                    borderRadius: '100%',
+                    border: '1px solid white',
+                    marginRight: '-0.5rem'
+                }}>
 
+                </Box>
+                <Typography sx={{ fontSize: '1.25rem' }}>{langStr.header_notice.text}</Typography>
+                <Typography sx={{
+                    border: '1px solid white',
+                    borderRadius: '0.25rem',
+                    padding: '0.125rem 0.5rem',
+                    fontSize: '0.875rem',
 
-
-        </FlexBox>
+                }}>{langStr.header_notice.button_text}</Typography>
+            </FlexBox>
+        </Box>
     )
 }
 
 export default Header
+
+const SubMenu = () => {
+    return (
+        <>
+            <p>Menu</p>
+        </>
+    )
+}
