@@ -8,6 +8,8 @@ import { ArrowBack, ArrowLeft } from '@mui/icons-material'
 import { axiosInstance } from '../api/axiosInstance'
 import socialData from '../resources/socialLinks.json'
 import CourseCard from '../components/CourseCard'
+import FAQs from '../components/FAQs'
+import Footer from '../components/Footer'
 
 const VideoSeriesPage = () => {
 
@@ -38,10 +40,10 @@ const VideoSeriesPage = () => {
 
     return (
         <>
-            <FlexBox column sx={{
+            <FlexBox column className='test' sx={{
                 justifyContent: 'flex-start',
                 alignItems: 'flex-start',
-                width: '100vw',
+                maxWidth: '100vw',
             }}>
                 <Header />
                 <ActionBar />
@@ -50,7 +52,7 @@ const VideoSeriesPage = () => {
                     <FlexBox column sx={{
                         justifyContent: 'flex-start',
                         alignItems: 'flex-start',
-                        padding: '0rem 1rem 1rem 1rem'
+                        padding: '0rem 2rem 0rem 2rem'
                     }}>
 
                         {/* Bread Crumb */}
@@ -68,9 +70,12 @@ const VideoSeriesPage = () => {
 
 
                         {/* Hero Section */}
-                        <FlexBox sx={{ alignItems: 'flex-start' }}>
+                        <FlexBox sx={{
+                            alignItems: 'flex-start',
+                            flexDirection: { md: 'row', sm: 'row', xs: 'column' }
+                        }}>
                             <FlexBox column sx={{
-                                width: '65%',
+                                width: { md: '65%', sm: '65%', xs: '100%' },
                                 alignItems: 'flex-start',
                             }}>
                                 <img
@@ -125,18 +130,21 @@ const VideoSeriesPage = () => {
                                 display: 'grid',
                                 width: '100%',
                                 gap: '1rem',
-                                gridTemplateColumns: 'repeat(3,1fr)',
-                                flexWrap: 'wrap'
+                                gridTemplateColumns: { md: 'repeat(3,1fr)', sm: 'repeat(2,1fr)', xs: '1fr' },
                             }}>
-                                {pageData.courses.map((item) => (
-                                    <CourseCard data={item} />
+                                {pageData.courses.map((item, idx) => (
+                                    <CourseCard data={item} idx={idx} />
                                 ))}
                             </Box>
 
                         </FlexBox>
 
+                        {/* FAQ Section */}
 
+                        <FAQs />
 
+                        {/* FOOTER */}
+                        <Footer/>
                     </FlexBox>
                     : <></>}
             </FlexBox >

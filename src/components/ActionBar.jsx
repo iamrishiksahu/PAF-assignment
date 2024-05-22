@@ -8,6 +8,7 @@ const ActionBar = () => {
         <FlexBox sx={{
             justifyContent: 'space-between',
             paddingX: '2rem',
+            width: '100%',
             boxShadow: '0 1px 1px rgba(0,0,0,0.1)',
             marginTop: '-1rem',
             height: '3rem',

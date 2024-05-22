@@ -74,7 +74,7 @@ const Header = () => {
         <Box sx={{
             display: 'flex',
             flexDirection: 'column',
-            width: '100vw'
+            width: '100%'
         }}>
             <FlexBox sx={{
                 height: '3rem',
