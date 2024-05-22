@@ -11,7 +11,11 @@ const ActionBar = () => {
             width: '100%',
             boxShadow: '0 1px 1px rgba(0,0,0,0.1)',
             marginTop: '-1rem',
+            zIndex: 5,
             height: '3rem',
+            position: 'sticky',
+            top: -1,
+            backgroundColor: 'white'
 
         }}>
             <FlexBox sx={{ justifyContent: 'flex-start' }}>
@@ -23,8 +27,9 @@ const ActionBar = () => {
                     marginLeft: '1rem',
                     border: '1px solid #ebebeb',
                     borderRadius: '0.25rem',
+                    display: {sm: 'flex', xs: 'none'},
                     justifyContent: 'flex-start',
-                    width: '36rem',
+                    maxWidth: '36rem',
                     height: '2.375rem',
                     boxShadow: '0 0 1px rgba(0,0,0,0.2)'
 

@@ -1,6 +1,7 @@
 import React from 'react'
 import { FlexBox } from './reusables/AllContainers'
-import { Box, Divider, Typography } from '@mui/material'
+import { Box, Button, Divider, Typography } from '@mui/material'
+import { ArrowCircleDown } from '@mui/icons-material'
 
 const Footer = () => {
 
@@ -74,6 +75,7 @@ const Footer = () => {
             padding: '3rem 0rem 3rem 1rem',
             marginLeft: '-2rem',
             backgroundColor: 'var(--color-bg-4)',
+            overflow: 'hidden'
         }}>
             <Box sx={{
                 display: 'grid',
@@ -220,19 +222,43 @@ const Footer = () => {
                 <FlexBox sx={{
                     justifyContent: 'space-between',
                     fontSize: '0.75rem',
-                    width: '55%',
+                    width: '60%',
                     flexDirection: {md: 'row', sm: 'row', xs: 'column' },
                     marginBottom: '2.5rem',
-                    marginTop: '1rem'
+                    marginTop: '1rem',
+                    color: 'var(--text-4)'
                 }}>
                     <Typography sx={{ color: 'var(--text-4)' }} fontSize={'0.875rem'}>Copyright © 2022 PrashantAdvait Foundation</Typography>
                     <FlexBox sx={{ width: { md: 'max-content', xs: '100%' }, justifyContent: { xs: 'flex-start' } }}>
-                        <FooterTextLink small>Terms & Conditions</FooterTextLink>
-                        <FooterTextLink small>Privacy Policy</FooterTextLink>
+                        <FooterTextLink small>Terms & Conditions</FooterTextLink>|
+                        <FooterTextLink small>Privacy Policy</FooterTextLink>|
                         <FooterTextLink small>Undertaking</FooterTextLink>
                     </FlexBox>
                 </FlexBox>
             </FlexBox>
+
+            {/* STICKY CTA Section */}
+            <FlexBox sx={{
+                height: '4rem',
+                backgroundColor: 'var(--color-accent)',
+                justifyContent: 'space-between',
+                paddingX: '2rem',
+                position: 'fixed',
+                bottom:0,
+                left: 0,
+                display: {md: 'none', sm: 'flex', xs: 'flex'}
+            }}>
+
+                <Typography>Read 130+ eBooks in App</Typography>
+                <Button variant='contained' sx={{
+                    borderRadius: '5rem',
+                    backgroundColor: 'var(--color-secondary)',
+                    textTransform: 'none',
+                    fontSize: '.875rem'
+                }}><ArrowCircleDown sx={{fontSize: '1rem'}}/>&nbsp; Download App</Button>
+
+            </FlexBox>
+
         </FlexBox>
     )
 }
