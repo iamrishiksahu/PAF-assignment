@@ -7,7 +7,6 @@ const ActionBar = () => {
     return (
         <FlexBox sx={{
             justifyContent: 'space-between',
-            paddingX: '2rem',
             width: '100%',
             boxShadow: '0 1px 1px rgba(0,0,0,0.1)',
             marginTop: '-1rem',
@@ -15,7 +14,9 @@ const ActionBar = () => {
             height: '3rem',
             position: 'sticky',
             top: -1,
-            backgroundColor: 'white'
+            backgroundColor: 'white',
+            paddingX: { md: '2rem', sm: '1rem', xs: '1rem' }
+
 
         }}>
             <FlexBox sx={{ justifyContent: 'flex-start' }}>

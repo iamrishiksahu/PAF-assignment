@@ -84,17 +84,24 @@ const VideoSeriesPage = () => {
                                     src={`${pageData.details.thumbnail.domain}/${pageData.details.thumbnail.basePath}/10/image.jpg`}
                                     alt={pageData.details.thumbnail.id} />
 
-                                <Typography>Share this series:</Typography>
-                                <FlexBox sx={{
-                                    justifyContent: 'flex-start',
-                                    gap: '3rem'
-                                }} >
-                                    {socialData.map((item) => (
-                                        <a href={item.link} target='_blank' key={item.name}>
-                                            <img width={'24px'} height={'24px'} src={item.iconUrl} alt={item.name} />
-                                        </a>
-                                    ))}
+                                <FlexBox column sx={{
+                                    alignItems: 'flex-start',
+                                    display: {md: 'flex', sm: 'none', xs: 'none'}
+                                }}>
+
+                                    <Typography>Share this series:</Typography>
+                                    <FlexBox sx={{
+                                        justifyContent: 'flex-start',
+                                        gap: '3rem'
+                                    }} >
+                                        {socialData.map((item) => (
+                                            <a href={item.link} target='_blank' key={item.name}>
+                                                <img width={'24px'} height={'24px'} src={item.iconUrl} alt={item.name} />
+                                            </a>
+                                        ))}
+                                    </FlexBox>
                                 </FlexBox>
+
 
                             </FlexBox>
                             <FlexBox column sx={{
@@ -123,14 +130,14 @@ const VideoSeriesPage = () => {
                                 borderBottom: '1px solid var(--border-bottom-color)',
                                 padding: '.75rem 0'
                             }}>
-                                <Typography fontSize={'1.25rem'}>Video Series ({pageData.courses.length})</Typography>
+                                <Typography fontSize={'1.25rem'} >Video Series ({pageData.courses.length})</Typography>
                             </Box>
 
                             <Box sx={{
                                 display: 'grid',
                                 width: '100%',
                                 gap: '1rem',
-                                gridTemplateColumns: { md: 'repeat(3,1fr)', sm: 'repeat(2,1fr)', xs: '1fr' },
+                                gridTemplateColumns: { lg: 'repeat(4,1fr)', md: 'repeat(3,1fr)', sm: 'repeat(2,1fr)', xs: '1fr' },
                             }}>
                                 {pageData.courses.map((item, idx) => (
                                     <CourseCard data={item} idx={idx} />
@@ -144,7 +151,7 @@ const VideoSeriesPage = () => {
                         <FAQs />
 
                         {/* FOOTER */}
-                        <Footer/>
+                        <Footer />
                     </FlexBox>
                     : <></>}
             </FlexBox >

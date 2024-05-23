@@ -80,7 +80,7 @@ const Header = () => {
                 height: '3rem',
                 justifyContent: 'space-between',
                 backgroundColor: 'var(--color-primary)',
-                paddingX: '1rem',
+                padding: { md: '1rem 2rem', sm: '1rem', xs: '1rem' },
             }}>
 
                 <FlexBox sx={{ width: 'fit-content', gap: '2rem' }}>
@@ -92,11 +92,14 @@ const Header = () => {
                         }}
                         src="https://acharyaprashant.org/images/ic_favicon.png"
                         alt="Acharya Prashant" />
-                    <FlexBox gap={'2rem'} >
+                    <FlexBox sx={{
+                        gap: { md: '2rem', sm: '1rem' },
+                        display: { md: 'flex', sm: 'flex', xs: 'none' }
+                    }} >
                         {navMenuList.map((item, idx) => (
                             <FlexBox
                                 onClick={() => {
-                                    item?.subMenu ? setShowSubMenu(true) : navigate(item.link)
+                                    // item?.subMenu ? setShowSubMenu(true) : navigate(item.link)
                                 }}
                                 sx={{
                                     width: 'fit-content',
@@ -106,7 +109,8 @@ const Header = () => {
                                     cursor: 'pointer'
                                 }} key={idx}>
 
-                                <Typography sx={{ fontSize: '0.875rem' }}>{item.title}</Typography>
+
+                                <Typography sx={{ fontSize: '0.875rem', textWrap: 'nowrap' }}>{item.title}</Typography>
                                 {item?.subMenu ? <ArrowDropDown /> : <></>}
 
                                 {item?.subMenu && showSubMenu && <SubMenu />}
@@ -118,9 +122,8 @@ const Header = () => {
                 <FlexBox sx={{ width: 'fit-content', color: 'white', gap: '0.75rem' }}>
 
                     <FlexBox gap={0} sx={{ cursor: 'pointer' }}
-                    onClick={switchLanguage}
+                        onClick={switchLanguage}
                     >
-
                         <Box sx={{
                             color: 'white',
                             fontWeight: '600',
@@ -137,7 +140,11 @@ const Header = () => {
                     </FlexBox>
 
 
-                    <PhoneOutlined sx={{ cursor: 'pointer' }} />
+                    <PhoneOutlined sx={{
+                        cursor: 'pointer',
+                        display: { md: 'flex', sm: 'none', xs: 'none' }
+
+                    }} />
 
                     <Box sx={{
                         display: 'flex',
@@ -156,25 +163,41 @@ const Header = () => {
             <FlexBox sx={{
                 backgroundColor: 'var(--color-bg-2)',
                 color: 'white',
-                paddingY: '1rem'
+                padding: '.875rem 1rem',
+                justifyContent: { md: 'center', sm: 'space-between', xs: 'space-between' }
             }}>
-                <Box sx={{
-                    backgroundColor: 'rgb(220 38 38)',
-                    padding: '0.45rem',
-                    borderRadius: '100%',
-                    border: '1px solid white',
-                    marginRight: '-0.5rem'
-                }}>
 
+                <Box sx={{ gap: '1rem', display: 'flex' }}>
+                    <Box sx={{
+                        backgroundColor: 'rgb(220 38 38)',
+                        width: '16px',
+                        marginTop: '0.25rem',
+                        height: '16px',
+                        borderRadius: '5rem',
+                        border: '1px solid white',
+                        marginRight: '-0.5rem',
+                        flexShrink: 0,
+                    }}>
+                    </Box>
+                    <Typography sx={{
+                        fontSize: { md: '1.125rem', sm: '1rem', xs: '1rem' }
+                    }}>{langStr.header_notice.text}</Typography>
                 </Box>
-                <Typography sx={{ fontSize: '1.25rem' }}>{langStr.header_notice.text}</Typography>
-                <Typography sx={{
-                    border: '1px solid white',
-                    borderRadius: '0.25rem',
-                    padding: '0.125rem 0.5rem',
-                    fontSize: '0.875rem',
 
-                }}>{langStr.header_notice.button_text}</Typography>
+
+                <a target='_blank' href='https://acharyaprashant.org/hi/contribute/contribute-work?cmId=m00071'>
+                    <Typography
+                        sx={{
+                            border: '1px solid white',
+                            borderRadius: '0.25rem',
+                            padding: '0.125rem 0.5rem',
+                            fontSize: '0.875rem',
+                            width: 'max-content',
+                            textWrap: 'nowrap',
+                            cursor: 'pointer',
+                            color: 'white'
+                        }}>{langStr.header_notice.button_text}</Typography>
+                </a>
             </FlexBox>
         </Box>
     )

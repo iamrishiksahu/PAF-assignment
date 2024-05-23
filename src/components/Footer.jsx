@@ -71,8 +71,8 @@ const Footer = () => {
         <FlexBox column sx={{
             width: 'calc(100% + 4rem)',
             position: 'relative',
-            alignItems: {xs: 'flex-start', sm: 'center', md: 'center'},
-            padding: '3rem 0rem 3rem 1rem',
+            alignItems: { xs: 'flex-start', sm: 'center', md: 'center' },
+            padding: '3rem 2rem 3rem 2rem',
             marginLeft: '-2rem',
             backgroundColor: 'var(--color-bg-4)',
             overflow: 'hidden'
@@ -210,7 +210,7 @@ const Footer = () => {
             </Box>
 
             <FlexBox column sx={{
-                alignItems: {md: 'center', sm: 'center',xs: 'flex-start'}
+                alignItems: { md: 'center', sm: 'center', xs: 'flex-start' }
             }}>
 
                 <Box sx={{
@@ -220,15 +220,20 @@ const Footer = () => {
                 }}></Box>
 
                 <FlexBox sx={{
-                    justifyContent: 'space-between',
+                    justifyContent: {sm: 'center', md: 'space-between'},
+                    alignItems: 'flex-start',
                     fontSize: '0.75rem',
                     width: '60%',
-                    flexDirection: {md: 'row', sm: 'row', xs: 'column' },
+                    flexDirection: { md: 'row', sm: 'row', xs: 'column' },
                     marginBottom: '2.5rem',
                     marginTop: '1rem',
                     color: 'var(--text-4)'
                 }}>
-                    <Typography sx={{ color: 'var(--text-4)' }} fontSize={'0.875rem'}>Copyright © 2022 PrashantAdvait Foundation</Typography>
+                    <Typography sx={{
+                        color: 'var(--text-4)',
+                        textWrap: 'nowrap',
+                        textAlign: 'left'
+                    }} fontSize={'0.875rem'}>Copyright © 2022 PrashantAdvait Foundation</Typography>
                     <FlexBox sx={{ width: { md: 'max-content', xs: '100%' }, justifyContent: { xs: 'flex-start' } }}>
                         <FooterTextLink small>Terms & Conditions</FooterTextLink>|
                         <FooterTextLink small>Privacy Policy</FooterTextLink>|
@@ -244,9 +249,9 @@ const Footer = () => {
                 justifyContent: 'space-between',
                 paddingX: '2rem',
                 position: 'fixed',
-                bottom:0,
+                bottom: 0,
                 left: 0,
-                display: {md: 'none', sm: 'flex', xs: 'flex'}
+                display: { md: 'none', sm: 'flex', xs: 'flex' }
             }}>
 
                 <Typography>Read 130+ eBooks in App</Typography>
@@ -255,7 +260,7 @@ const Footer = () => {
                     backgroundColor: 'var(--color-secondary)',
                     textTransform: 'none',
                     fontSize: '.875rem'
-                }}><ArrowCircleDown sx={{fontSize: '1rem'}}/>&nbsp; Download App</Button>
+                }}><ArrowCircleDown sx={{ fontSize: '1rem' }} />&nbsp; Download App</Button>
 
             </FlexBox>
 
@@ -284,6 +289,7 @@ const FooterTextLink = ({ children, small }) => {
             cursor: 'pointer',
             color: 'var(--text-4)',
             fontSize: small ? '0.875rem' : '1rem',
+            textWrap: 'nowrap',
             ":hover": {
                 color: 'var(--color-primary)'
             }
