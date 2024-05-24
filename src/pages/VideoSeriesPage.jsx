@@ -17,22 +17,27 @@ const VideoSeriesPage = () => {
 
     const [pageData, setPageData] = useState()
 
-
     const fetchPageData = async () => {
         try {
             const res = await axiosInstance.get('/courses/series/optuser/course-series-eeb9d3')
-            console.log(res.data)
             setPageData(res.data)
         } catch (err) {
             console.error(err)
             alert('Something went wrong! Please try to refresh the page.')
         }
-
     }
 
-    useEffect(() => {
+    
+    const fetchTags = async () => {
+        try {
+            const res = await axiosInstance.get(`/courses/faqs?language=${language.toLowerCase()}`)
+            console.log(res.data)
+        } catch (err) {
+            console.error(err)
+            alert('Something went wrong! Please try to refresh the page.')
+        }
+    }
 
-    }, [pageData])
 
     useEffect(() => {
         fetchPageData()

@@ -63,14 +63,12 @@ const ActionBar = () => {
                         height: '100%',
                         backgroundColor: 'var(--color-accent)',
                         padding: '0 0.25rem',
-                        borderLeft: '1px solid #ebebeb'
+                        borderLeft: '1px solid #ebebeb',
+                        cursor: 'pointer'
                     }}>
 
                         <Search sx={{ color: 'var(--text-2)', mx: '0.125rem' }} />
                     </FlexBox>
-
-
-
                 </FlexBox>
             </FlexBox>
 
