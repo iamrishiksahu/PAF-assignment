@@ -11,12 +11,11 @@ Cloning the project
     git clone https://github.com/iamrishiksahu/PAF-assignment.git
 ```
 
-Installing dependencies
+Moving to directory
 
 ```bash
     cd "PAF-assignment"
 ```
-
 
 Installing dependencies
 
