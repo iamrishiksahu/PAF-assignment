@@ -8,7 +8,6 @@ import { regularTheme } from './themes/regularTheme.js'
 import { ThemeProvider } from '@mui/material'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
     <BrowserRouter>
       <LanguageProvider>
         <ThemeProvider theme={regularTheme}>
@@ -16,5 +15,4 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         </ThemeProvider>
       </LanguageProvider>
     </BrowserRouter>
-  </React.StrictMode>,
 )

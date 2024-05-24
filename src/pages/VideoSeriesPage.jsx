@@ -27,7 +27,7 @@ const VideoSeriesPage = () => {
         }
     }
 
-    
+
     const fetchTags = async () => {
         try {
             const res = await axiosInstance.get(`/courses/faqs?language=${language.toLowerCase()}`)
@@ -45,7 +45,7 @@ const VideoSeriesPage = () => {
 
     return (
         <>
-            <FlexBox column className='test' sx={{
+            <FlexBox column={true} className='test' sx={{
                 justifyContent: 'flex-start',
                 alignItems: 'flex-start',
                 maxWidth: '100vw',
@@ -145,7 +145,7 @@ const VideoSeriesPage = () => {
                                 gridTemplateColumns: { lg: 'repeat(4,1fr)', md: 'repeat(3,1fr)', sm: 'repeat(2,1fr)', xs: '1fr' },
                             }}>
                                 {pageData.courses.map((item, idx) => (
-                                    <CourseCard data={item} idx={idx} />
+                                    <CourseCard data={item} idx={idx} key={idx} />
                                 ))}
                             </Box>
 
