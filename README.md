@@ -2,7 +2,7 @@
 ## Assignment - Acharya Prashant Foundation
 This project is a React App which is a replica of [Video Series Page]('https://acharyaprashant.org/en/video-modules/series/course-series-eeb9d3') in the official website - https://acharyaprashant.org/
 
-Deployed URL:
+Deployed URL: https://paf-assignment.vercel.app/
 ## Run Locally
 
 Cloning the project
@@ -41,7 +41,7 @@ export default defineConfig({
     ...
 })
 ```
-
-
     
 ## Screenshots
+![Full Page](https://github.com/iamrishiksahu/PAF-assignment/assets/60431447/e79f1638-8002-4e45-ab3f-f9e3f49d5fbf)
+
